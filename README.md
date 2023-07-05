@@ -2,7 +2,8 @@ English | [简体中文](README_cn.md)
 
 <h1 align="center">uspeedo Go SDK</h1>
 
-[![GitHub (pre-)release](https://img.shields.io/github/release/uspeedo/uspeedo-sdk-go/all.svg)](https://github.com/uspeedo/uspeedo-sdk-go/releases)
+[![GitHub release](https://img.shields.io/github/release/uspeedo/uspeedo-sdk-go/all.svg)](https://github.com/uspeedo/uspeedo-sdk-go/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/uspeedo/uspeedo-sdk-go)](https://goreportcard.com/report/github.com/uspeedo/uspeedo-sdk-go)
 [![GoDoc](https://godoc.org/github.com/uspeedo/uspeedo-sdk-go?status.svg)](https://godoc.org/github.com/uspeedo/uspeedo-sdk-go)
 [![GitHub](https://img.shields.io/github/license/uspeedo/uspeedo-sdk-go.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
