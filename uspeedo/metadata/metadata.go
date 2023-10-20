@@ -8,7 +8,6 @@ type Metadata struct {
 	NetworkConfig    MDNetworkConfig `json:"network-config"`
 	Platform         string          `json:"platform"`
 	PublicSSHKeys    []string        `json:"public-ssh-keys"`
-	Region           string          `json:"region"`
 	UHost            MDUHost         `json:"uhost"`
 	UPHost           MDUPHost        `json:"uphost"`
 }
@@ -73,8 +72,6 @@ type MDUHost struct {
 	NetCapability     string                `json:"net-capability"`
 	NetworkInterfaces []MDNetworkInterfaces `json:"network-interfaces"`
 	OsName            string                `json:"os-name"`
-	ProjectId         string                `json:"project-id"`
-	Region            string                `json:"region"`
 	Remark            string                `json:"remark"`
 	Tag               string                `json:"tag"`
 	UHostId           string                `json:"uhost-id"`
@@ -90,8 +87,6 @@ type MDUPHost struct {
 	OSName            string                `json:"os-name"`
 	PHostId           string                `json:"phost-id"`
 	PHostType         string                `json:"phost-type"`
-	ProjectId         string                `json:"project-id"`
-	Region            string                `json:"region"`
 	Remark            string                `json:"remark"`
 	Tag               string                `json:"tag"`
 	Zone              string                `json:"zone"`

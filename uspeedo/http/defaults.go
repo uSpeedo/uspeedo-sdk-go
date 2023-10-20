@@ -16,7 +16,7 @@ const (
 
 	HeaderNamePublicKey = "X-Access-Key-Id"
 	HeaderNameSignature = "X-Signature"
-	HeaderNameTimestamp = "X-Timestamp" // 请求时间戳，NTP误差范围10min内
+	HeaderNameTimestamp = "X-Timestamp" // 请求时间戳，NTP误差范围5min内
 	HeaderNameNonce     = "X-Nonce"     // MAX len 32 char
 )
 

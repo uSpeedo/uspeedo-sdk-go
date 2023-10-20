@@ -11,7 +11,7 @@ type Config struct {
 
 	// BaseUrl is the url of backend api
 	// See also <doc link> ...
-	BaseUrl string `default:"https://api.uspeedo.cn"`
+	BaseUrl string `default:"https://api.uspeedo.com/api"`
 
 	// UserAgent is an attribute for sdk client, used for distinguish who is using sdk.
 	// See also https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
