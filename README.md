@@ -66,7 +66,7 @@ import (
 
 	"github.com/uspeedo/uspeedo-sdk-go/uspeedo"
 	"github.com/uspeedo/uspeedo-sdk-go/uspeedo/auth"
-	"github.com/uspeedo/uspeedo-sdk-go/services/usms"
+	"github.com/uspeedo/uspeedo-sdk-go/services/asms"
 )
 
 func main() {
@@ -77,15 +77,15 @@ func main() {
 	credential.PrivateKey = "my_private_key"
 	credential.PublicKey = "my_public_key"
 
-	usmsClient := usms.NewClient(&cfg, &credential)
+	asmsClient := asms.NewClient(&cfg, &credential)
 
-	req := usmsClient.NewSendBatchUSMSMessageRequest()
+	req := asmsClient.NewSendBatchUSMSMessageRequest()
 	req.ChargeType = uspeedo.String("Dynamic")
-	req.TaskContent = []usms.SendBatchInfo{
+	req.TaskContent = []asms.SendBatchInfo{
 		{
 			TemplateId: "...",
 			SenderId:   "",
-			Target: []usms.SendBatchTarget{
+			Target: []asms.SendBatchTarget{
 				{
 					Phone: "130xxxx1321",
 				},
@@ -97,7 +97,7 @@ func main() {
 	}
 
 	// send request
-	resp, err := usmsClient.SendBatchUSMSMessage(req)
+	resp, err := asmsClient.SendBatchUSMSMessage(req)
 	if err != nil {
 		fmt.Printf("something bad happened: %s\n", err)
 	} else {

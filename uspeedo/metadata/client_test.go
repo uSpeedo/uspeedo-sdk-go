@@ -122,7 +122,6 @@ var goldenMetadata = Metadata{
 	},
 	Platform:      "uhost",
 	PublicSSHKeys: []string{},
-	Region:        "hk",
 	UHost: MDUHost{
 		CPU: 1,
 		Disks: []MDDisks{
@@ -156,13 +155,11 @@ var goldenMetadata = Metadata{
 				VpcId:    "uvnet-vxil3h",
 			},
 		},
-		OsName:    "CentOS 7.6 64位",
-		ProjectId: "org-xp2ucn",
-		Region:    "hk",
-		Remark:    "",
-		Tag:       "Default",
-		UHostId:   "uhost-hhqeihh5",
-		Zone:      "hk-02",
+		OsName:  "CentOS 7.6 64位",
+		Remark:  "",
+		Tag:     "Default",
+		UHostId: "uhost-hhqeihh5",
+		Zone:    "hk-02",
 	},
 }
 
@@ -196,7 +193,6 @@ const mockedMetadata = `
     },
     "platform": "uhost",
     "public-ssh-keys": [],
-    "region": "hk",
     "uhost": {
         "cpu": 1,
         "disks": [
@@ -239,8 +235,6 @@ const mockedMetadata = `
             }
         ],
         "os-name": "CentOS 7.6 64位",
-        "project-id": "org-xp2ucn",
-        "region": "hk",
         "remark": "",
         "tag": "Default",
         "uhost-id": "uhost-hhqeihh5",

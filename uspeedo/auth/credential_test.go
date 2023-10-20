@@ -37,6 +37,12 @@ func TestCredential_CreateSign(t *testing.T) {
 			args{testCredentialCreateSignQuery02},
 			"11a0430ae6f1a4dc0c656e64dfc1886b0ac4b63a",
 		},
+		{
+			"noParams",
+			fields{"0dca1d51a9b3113c6f562acb0f813bce", "NTk1Mzk0MAItOWI0My10MGM4LTg0NmMMNDM0ZGM5Y2ZkMmNk"},
+			args{testCredentialCreateSignQuery03},
+			"ceabd6349a8f229a82271119a8b3af30ba8a2428",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -77,6 +83,12 @@ func TestCredential_BuildCredentialedQuery(t *testing.T) {
 			args{testCredentialBuildCredentialedQuery02},
 			"258dc3d2d7115e9e7c9f4dd4910e671e17b224f1",
 		},
+		{
+			"noParams",
+			fields{"0dca1d51a9b3113c6f562acb0f813bce", "NTk1Mzk0MAItOWI0My10MGM4LTg0NmMMNDM0ZGM5Y2ZkMmNk"},
+			args{testCredentialBuildCredentialedQuery03},
+			"ceabd6349a8f229a82271119a8b3af30ba8a2428",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -111,6 +123,8 @@ var testCredentialCreateSignQuery02 = strings.Join(strings.Split(`Action=CreateU
 &Template=your%20code%20is%20%7B1%7D
 &TemplateName=demo`, "\n"), "")
 
+var testCredentialCreateSignQuery03 = strings.Join(strings.Split(`Action=GetNSPermission`, "\n"), "")
+
 var testCredentialBuildCredentialedQuery01 = map[string]interface{}{
 	"Action":       "CreateUSMSTemplate",
 	"AccountId":    "60000011",
@@ -123,4 +137,8 @@ var testCredentialBuildCredentialedQuery02 = map[string]interface{}{
 	"Action":     "QueryUSMSTemplate",
 	"AccountId":  "60000011",
 	"TemplateId": []string{"UTA230227EL4IW1", "UTA230227JVIB02"},
+}
+
+var testCredentialBuildCredentialedQuery03 = map[string]interface{}{
+	"Action": "GetNSPermission",
 }
