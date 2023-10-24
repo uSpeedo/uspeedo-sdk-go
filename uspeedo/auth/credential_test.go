@@ -89,6 +89,12 @@ func TestCredential_BuildCredentialedQuery(t *testing.T) {
 			args{testCredentialBuildCredentialedQuery03},
 			"ceabd6349a8f229a82271119a8b3af30ba8a2428",
 		},
+		{
+			"longArrayStruct",
+			fields{"0dca1d51a9b3113c6f562acb0f813bce", "NTk1Mzk0MAItOWI0My10MGM4LTg0NmMMNDM0ZGM5Y2ZkMmNk"},
+			args{testCredentialBuildCredentialedQuery04},
+			"7175ca50d6204dfd469e8aab447810c08f9da53f",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -141,4 +147,20 @@ var testCredentialBuildCredentialedQuery02 = map[string]interface{}{
 
 var testCredentialBuildCredentialedQuery03 = map[string]interface{}{
 	"Action": "GetNSPermission",
+}
+
+var testCredentialBuildCredentialedQuery04 = map[string]interface{}{
+	"Action": "SendBatchUSMSMessage",
+	"TaskContent": []map[string]interface{}{
+		{
+			"TemplateId": "UTAXXXXXXXXXXX",
+			"SenderId":   "uspeedo",
+			"Target": []map[string]interface{}{
+				{
+					"Phone":          "1111",
+					"TemplateParams": []string{"1111"},
+				},
+			},
+		},
+	},
 }
