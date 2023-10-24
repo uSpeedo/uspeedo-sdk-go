@@ -20,9 +20,9 @@ func NewClient(config *uspeedo.Config, credential *auth.Credential) *AsmsClient 
 	}
 }
 
-// NewCreateUSMSTemplateReq will create request of CreateUSMSTemplate action.
-func (c *AsmsClient) NewCreateUSMSTemplateReq() *apis.CreateUSMSTemplateReq {
-	req := &apis.CreateUSMSTemplateReq{}
+// NewQueryUSMSTemplateReq will create request of QueryUSMSTemplate action.
+func (c *AsmsClient) NewQueryUSMSTemplateReq() *apis.QueryUSMSTemplateReq {
+	req := &apis.QueryUSMSTemplateReq{}
 
 	// setup request with client config
 	c.Client.SetupRequest(req)
@@ -33,13 +33,13 @@ func (c *AsmsClient) NewCreateUSMSTemplateReq() *apis.CreateUSMSTemplateReq {
 }
 
 /*
-API: CreateUSMSTemplate
+API: QueryUSMSTemplate
 */
-func (c *AsmsClient) CreateUSMSTemplate(req *apis.CreateUSMSTemplateReq) (*apis.ApplyUSMSTemplateResp, error) {
+func (c *AsmsClient) QueryUSMSTemplate(req *apis.QueryUSMSTemplateReq) (*apis.QueryUSMSTemplateResp, error) {
 	var err error
-	var res apis.ApplyUSMSTemplateResp
+	var res apis.QueryUSMSTemplateResp
 
-	err = c.Client.InvokeAction("CreateUSMSTemplate", req, &res)
+	err = c.Client.InvokeAction("QueryUSMSTemplate", req, &res)
 	if err != nil {
 		return &res, err
 	}
@@ -98,58 +98,6 @@ func (c *AsmsClient) SendBatchUSMSMessage(req *apis.SendBatchUSMSMessageReq) (*a
 	return &res, nil
 }
 
-// NewGetUSMSSendReceiptReq will create request of GetUSMSSendReceipt action.
-func (c *AsmsClient) NewGetUSMSSendReceiptReq() *apis.GetUSMSSendReceiptReq {
-	req := &apis.GetUSMSSendReceiptReq{}
-
-	// setup request with client config
-	c.Client.SetupRequest(req)
-
-	// setup retryable with default retry policy (retry for non-create action and common error)
-	req.SetRetryable(true)
-	return req
-}
-
-/*
-API: GetUSMSSendReceipt
-*/
-func (c *AsmsClient) GetUSMSSendReceipt(req *apis.GetUSMSSendReceiptReq) (*apis.GetUSMSSendReceiptResp, error) {
-	var err error
-	var res apis.GetUSMSSendReceiptResp
-
-	err = c.Client.InvokeAction("GetUSMSSendReceipt", req, &res)
-	if err != nil {
-		return &res, err
-	}
-	return &res, nil
-}
-
-// NewQueryUSMSTemplateReq will create request of QueryUSMSTemplate action.
-func (c *AsmsClient) NewQueryUSMSTemplateReq() *apis.QueryUSMSTemplateReq {
-	req := &apis.QueryUSMSTemplateReq{}
-
-	// setup request with client config
-	c.Client.SetupRequest(req)
-
-	// setup retryable with default retry policy (retry for non-create action and common error)
-	req.SetRetryable(true)
-	return req
-}
-
-/*
-API: QueryUSMSTemplate
-*/
-func (c *AsmsClient) QueryUSMSTemplate(req *apis.QueryUSMSTemplateReq) (*apis.QueryUSMSTemplateResp, error) {
-	var err error
-	var res apis.QueryUSMSTemplateResp
-
-	err = c.Client.InvokeAction("QueryUSMSTemplate", req, &res)
-	if err != nil {
-		return &res, err
-	}
-	return &res, nil
-}
-
 // NewDeleteUSMSTemplateReq will create request of DeleteUSMSTemplate action.
 func (c *AsmsClient) NewDeleteUSMSTemplateReq() *apis.DeleteUSMSTemplateReq {
 	req := &apis.DeleteUSMSTemplateReq{}
@@ -170,6 +118,58 @@ func (c *AsmsClient) DeleteUSMSTemplate(req *apis.DeleteUSMSTemplateReq) (*apis.
 	var res apis.DeleteUSMSTemplateResp
 
 	err = c.Client.InvokeAction("DeleteUSMSTemplate", req, &res)
+	if err != nil {
+		return &res, err
+	}
+	return &res, nil
+}
+
+// NewCreateUSMSTemplateReq will create request of CreateUSMSTemplate action.
+func (c *AsmsClient) NewCreateUSMSTemplateReq() *apis.CreateUSMSTemplateReq {
+	req := &apis.CreateUSMSTemplateReq{}
+
+	// setup request with client config
+	c.Client.SetupRequest(req)
+
+	// setup retryable with default retry policy (retry for non-create action and common error)
+	req.SetRetryable(true)
+	return req
+}
+
+/*
+API: CreateUSMSTemplate
+*/
+func (c *AsmsClient) CreateUSMSTemplate(req *apis.CreateUSMSTemplateReq) (*apis.CreateUSMSTemplateResp, error) {
+	var err error
+	var res apis.CreateUSMSTemplateResp
+
+	err = c.Client.InvokeAction("CreateUSMSTemplate", req, &res)
+	if err != nil {
+		return &res, err
+	}
+	return &res, nil
+}
+
+// NewGetUSMSSendReceiptReq will create request of GetUSMSSendReceipt action.
+func (c *AsmsClient) NewGetUSMSSendReceiptReq() *apis.GetUSMSSendReceiptReq {
+	req := &apis.GetUSMSSendReceiptReq{}
+
+	// setup request with client config
+	c.Client.SetupRequest(req)
+
+	// setup retryable with default retry policy (retry for non-create action and common error)
+	req.SetRetryable(true)
+	return req
+}
+
+/*
+API: GetUSMSSendReceipt
+*/
+func (c *AsmsClient) GetUSMSSendReceipt(req *apis.GetUSMSSendReceiptReq) (*apis.GetUSMSSendReceiptResp, error) {
+	var err error
+	var res apis.GetUSMSSendReceiptResp
+
+	err = c.Client.InvokeAction("GetUSMSSendReceipt", req, &res)
 	if err != nil {
 		return &res, err
 	}

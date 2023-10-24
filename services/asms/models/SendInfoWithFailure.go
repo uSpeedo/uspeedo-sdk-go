@@ -1,10 +1,14 @@
 package models
 
 /*
-BatchWithFailure -
+SendInfoWithFailure -
 */
-type BatchWithFailure struct {
+type SendInfoWithFailure struct {
 
+	/**
+	 * Template ID
+	 */
+	TemplateId *string `required:""`
 	/**
 	 *
 	 */
@@ -16,9 +20,5 @@ type BatchWithFailure struct {
 	/**
 	 *
 	 */
-	Target []TargetPhone `required:""`
-	/**
-	 * Template ID
-	 */
-	TemplateId *string `required:""`
+	Target []TargetPhoneWithFailure `required:""`
 }
