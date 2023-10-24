@@ -8,18 +8,6 @@ type ReceiptPerPhone struct {
 	/**
 	 *
 	 */
-	ReceiptResult *string `required:""`
-	/**
-	 *
-	 */
-	ReceiptTime *int `required:""`
-	/**
-	 *
-	 */
-	UserId *string `required:""`
-	/**
-	 *
-	 */
 	AccountId *int `required:""`
 	/**
 	 *
@@ -37,4 +25,16 @@ type ReceiptPerPhone struct {
 	 *
 	 */
 	ReceiptDesc *string `required:""`
+	/**
+	 *
+	 */
+	ReceiptResult *string `required:""`
+	/**
+	 *
+	 */
+	ReceiptTime *int `required:""`
+	/**
+	 *
+	 */
+	UserId *string `required:""`
 }

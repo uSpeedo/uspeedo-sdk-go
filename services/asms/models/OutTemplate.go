@@ -8,35 +8,15 @@ type OutTemplate struct {
 	/**
 	 *
 	 */
-	Status *int `required:""`
-	/**
-	 *
-	 */
-	TemplateId *string `required:""`
-	/**
-	 * Properties corresponding to template variables
-	 */
-	Attributes []VariableAttr `required:""`
-	/**
-	 *
-	 */
 	CreateTime *int `required:""`
-	/**
-	 *
-	 */
-	Remark *string `required:""`
-	/**
-	 * tags
-	 */
-	Tags []int `required:""`
 	/**
 	 *
 	 */
 	Template *string `required:""`
 	/**
-	 *
+	 * Properties corresponding to template variables
 	 */
-	TemplateName *string `required:""`
+	Attributes []VariableAttr `required:""`
 	/**
 	 *
 	 */
@@ -49,4 +29,24 @@ type OutTemplate struct {
 	 *
 	 */
 	Purpose *int `required:""`
+	/**
+	 *
+	 */
+	Remark *string `required:""`
+	/**
+	 *
+	 */
+	Status *int `required:""`
+	/**
+	 * tags
+	 */
+	Tags []int `required:""`
+	/**
+	 *
+	 */
+	TemplateId *string `required:""`
+	/**
+	 *
+	 */
+	TemplateName *string `required:""`
 }

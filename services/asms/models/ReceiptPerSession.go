@@ -8,9 +8,9 @@ type ReceiptPerSession struct {
 	/**
 	 *
 	 */
-	ReceiptSet []ReceiptPerPhone `required:""`
+	SessionNo *string `required:""`
 	/**
 	 *
 	 */
-	SessionNo *string `required:""`
+	ReceiptSet []ReceiptPerPhone `required:""`
 }

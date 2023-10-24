@@ -5,9 +5,9 @@ import (
 )
 
 /*
-ApplyUSMSTemplateResp -
+CreateUSMSTemplateResp -
 */
-type ApplyUSMSTemplateResp struct {
+type CreateUSMSTemplateResp struct {
 	response.CommonBase
 
 	/**

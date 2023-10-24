@@ -11,18 +11,6 @@ type UpdateUSMSTemplateReq struct {
 	request.CommonBase
 
 	/**
-	 *
-	 */
-	Template *string `required:""`
-	/**
-	 *
-	 */
-	TemplateId *string `required:"true"`
-	/**
-	 *
-	 */
-	TemplateName *string `required:""`
-	/**
 	 * Properties corresponding to template variables
 	 */
 	VariableAttr *string `required:""`
@@ -38,4 +26,16 @@ type UpdateUSMSTemplateReq struct {
 	 * tags
 	 */
 	Tags []int `required:""`
+	/**
+	 *
+	 */
+	Template *string `required:""`
+	/**
+	 *
+	 */
+	TemplateId *string `required:"true"`
+	/**
+	 *
+	 */
+	TemplateName *string `required:""`
 }

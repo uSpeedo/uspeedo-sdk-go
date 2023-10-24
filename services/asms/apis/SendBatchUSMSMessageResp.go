@@ -14,13 +14,13 @@ type SendBatchUSMSMessageResp struct {
 	/**
 	 *
 	 */
-	FailContent []models.BatchWithFailure `required:""`
+	SuccessCount *int `required:""`
+	/**
+	 *
+	 */
+	FailContent []models.SendInfoWithFailure `required:""`
 	/**
 	 *
 	 */
 	SessionNo *string `required:""`
-	/**
-	 *
-	 */
-	SuccessCount *int `required:""`
 }
