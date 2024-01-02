@@ -5,8 +5,8 @@ import (
 )
 
 /*
-Empty -
+DeleteTemplateRes -
 */
-type Empty struct {
+type DeleteTemplateRes struct {
 	response.CommonBase
 }

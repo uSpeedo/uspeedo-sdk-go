@@ -20,9 +20,9 @@ func NewClient(config *uspeedo.Config, credential *auth.Credential) *WhatsAppCli
 	}
 }
 
-// NewDeleteTemplateReq will create request of DeleteTemplate action.
-func (c *WhatsAppClient) NewDeleteTemplateReq() *apis.DeleteTemplateReq {
-	req := &apis.DeleteTemplateReq{}
+// NewDeleteMediaReq will create request of DeleteMedia action.
+func (c *WhatsAppClient) NewDeleteMediaReq() *apis.DeleteMediaReq {
+	req := &apis.DeleteMediaReq{}
 
 	// setup request with client config
 	c.Client.SetupRequest(req)
@@ -33,65 +33,13 @@ func (c *WhatsAppClient) NewDeleteTemplateReq() *apis.DeleteTemplateReq {
 }
 
 /*
-API: DeleteTemplate
+API: DeleteMedia
 */
-func (c *WhatsAppClient) DeleteTemplate(req *apis.DeleteTemplateReq) (*apis.Empty, error) {
+func (c *WhatsAppClient) DeleteMedia(req *apis.DeleteMediaReq) (*apis.DeleteMediaRes, error) {
 	var err error
-	var res apis.Empty
+	var res apis.DeleteMediaRes
 
-	err = c.Client.InvokeAction("DeleteTemplate", req, &res)
-	if err != nil {
-		return &res, err
-	}
-	return &res, nil
-}
-
-// NewSendWhatsappMessageReq will create request of SendWhatsappMessage action.
-func (c *WhatsAppClient) NewSendWhatsappMessageReq() *apis.SendWhatsappMessageReq {
-	req := &apis.SendWhatsappMessageReq{}
-
-	// setup request with client config
-	c.Client.SetupRequest(req)
-
-	// setup retryable with default retry policy (retry for non-create action and common error)
-	req.SetRetryable(true)
-	return req
-}
-
-/*
-API: SendWhatsappMessage
-*/
-func (c *WhatsAppClient) SendWhatsappMessage(req *apis.SendWhatsappMessageReq) (*apis.SendWhatsappMessageResData, error) {
-	var err error
-	var res apis.SendWhatsappMessageResData
-
-	err = c.Client.InvokeAction("SendWhatsappMessage", req, &res)
-	if err != nil {
-		return &res, err
-	}
-	return &res, nil
-}
-
-// NewGetMediaReq will create request of GetMedia action.
-func (c *WhatsAppClient) NewGetMediaReq() *apis.GetMediaReq {
-	req := &apis.GetMediaReq{}
-
-	// setup request with client config
-	c.Client.SetupRequest(req)
-
-	// setup retryable with default retry policy (retry for non-create action and common error)
-	req.SetRetryable(true)
-	return req
-}
-
-/*
-API: GetMedia
-*/
-func (c *WhatsAppClient) GetMedia(req *apis.GetMediaReq) (*apis.GetMediaResData, error) {
-	var err error
-	var res apis.GetMediaResData
-
-	err = c.Client.InvokeAction("GetMedia", req, &res)
+	err = c.Client.InvokeAction("DeleteMedia", req, &res)
 	if err != nil {
 		return &res, err
 	}
@@ -124,9 +72,9 @@ func (c *WhatsAppClient) UploadMedia(req *apis.UploadMediaReq) (*apis.UploadMedi
 	return &res, nil
 }
 
-// NewDeleteMediaReq will create request of DeleteMedia action.
-func (c *WhatsAppClient) NewDeleteMediaReq() *apis.DeleteMediaReq {
-	req := &apis.DeleteMediaReq{}
+// NewDeleteTemplateReq will create request of DeleteTemplate action.
+func (c *WhatsAppClient) NewDeleteTemplateReq() *apis.DeleteTemplateReq {
+	req := &apis.DeleteTemplateReq{}
 
 	// setup request with client config
 	c.Client.SetupRequest(req)
@@ -137,39 +85,13 @@ func (c *WhatsAppClient) NewDeleteMediaReq() *apis.DeleteMediaReq {
 }
 
 /*
-API: DeleteMedia
+API: DeleteTemplate
 */
-func (c *WhatsAppClient) DeleteMedia(req *apis.DeleteMediaReq) (*apis.Empty, error) {
+func (c *WhatsAppClient) DeleteTemplate(req *apis.DeleteTemplateReq) (*apis.DeleteTemplateRes, error) {
 	var err error
-	var res apis.Empty
+	var res apis.DeleteTemplateRes
 
-	err = c.Client.InvokeAction("DeleteMedia", req, &res)
-	if err != nil {
-		return &res, err
-	}
-	return &res, nil
-}
-
-// NewGetTemplatesReq will create request of GetTemplates action.
-func (c *WhatsAppClient) NewGetTemplatesReq() *apis.GetTemplatesReq {
-	req := &apis.GetTemplatesReq{}
-
-	// setup request with client config
-	c.Client.SetupRequest(req)
-
-	// setup retryable with default retry policy (retry for non-create action and common error)
-	req.SetRetryable(true)
-	return req
-}
-
-/*
-API: GetTemplates
-*/
-func (c *WhatsAppClient) GetTemplates(req *apis.GetTemplatesReq) (*apis.GetTemplatesResData, error) {
-	var err error
-	var res apis.GetTemplatesResData
-
-	err = c.Client.InvokeAction("GetTemplates", req, &res)
+	err = c.Client.InvokeAction("DeleteTemplate", req, &res)
 	if err != nil {
 		return &res, err
 	}
@@ -222,6 +144,84 @@ func (c *WhatsAppClient) GetAccountPhoneList(req *apis.GetAccountPhoneListReques
 	var res apis.GetAccountPhoneListResData
 
 	err = c.Client.InvokeAction("GetAccountPhoneList", req, &res)
+	if err != nil {
+		return &res, err
+	}
+	return &res, nil
+}
+
+// NewGetTemplatesReq will create request of GetTemplates action.
+func (c *WhatsAppClient) NewGetTemplatesReq() *apis.GetTemplatesReq {
+	req := &apis.GetTemplatesReq{}
+
+	// setup request with client config
+	c.Client.SetupRequest(req)
+
+	// setup retryable with default retry policy (retry for non-create action and common error)
+	req.SetRetryable(true)
+	return req
+}
+
+/*
+API: GetTemplates
+*/
+func (c *WhatsAppClient) GetTemplates(req *apis.GetTemplatesReq) (*apis.GetTemplatesResData, error) {
+	var err error
+	var res apis.GetTemplatesResData
+
+	err = c.Client.InvokeAction("GetTemplates", req, &res)
+	if err != nil {
+		return &res, err
+	}
+	return &res, nil
+}
+
+// NewGetMediaReq will create request of GetMedia action.
+func (c *WhatsAppClient) NewGetMediaReq() *apis.GetMediaReq {
+	req := &apis.GetMediaReq{}
+
+	// setup request with client config
+	c.Client.SetupRequest(req)
+
+	// setup retryable with default retry policy (retry for non-create action and common error)
+	req.SetRetryable(true)
+	return req
+}
+
+/*
+API: GetMedia
+*/
+func (c *WhatsAppClient) GetMedia(req *apis.GetMediaReq) (*apis.GetMediaResData, error) {
+	var err error
+	var res apis.GetMediaResData
+
+	err = c.Client.InvokeAction("GetMedia", req, &res)
+	if err != nil {
+		return &res, err
+	}
+	return &res, nil
+}
+
+// NewSendWhatsappMessageReq will create request of SendWhatsappMessage action.
+func (c *WhatsAppClient) NewSendWhatsappMessageReq() *apis.SendWhatsappMessageReq {
+	req := &apis.SendWhatsappMessageReq{}
+
+	// setup request with client config
+	c.Client.SetupRequest(req)
+
+	// setup retryable with default retry policy (retry for non-create action and common error)
+	req.SetRetryable(true)
+	return req
+}
+
+/*
+API: SendWhatsappMessage
+*/
+func (c *WhatsAppClient) SendWhatsappMessage(req *apis.SendWhatsappMessageReq) (*apis.SendWhatsappMessageResData, error) {
+	var err error
+	var res apis.SendWhatsappMessageResData
+
+	err = c.Client.InvokeAction("SendWhatsappMessage", req, &res)
 	if err != nil {
 		return &res, err
 	}
