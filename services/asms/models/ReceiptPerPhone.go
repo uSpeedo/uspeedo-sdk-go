@@ -12,7 +12,15 @@ type ReceiptPerPhone struct {
 	/**
 	 *
 	 */
+	BrevityCode *string `required:""`
+	/**
+	 *
+	 */
 	CostCount *int `required:""`
+	/**
+	 *
+	 */
+	CountryCode *string `required:""`
 	/**
 	 *
 	 */
