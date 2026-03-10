@@ -27,4 +27,12 @@ type SendEmailTemplateReq struct {
 	 *
 	 */
 	TemplateId *string `required:"true"`
+	/**
+	 * Subject - 邮件主题（可选）
+	 */
+	Subject *string `required:""`
+	/**
+	 * Abstract - 邮件摘要（可选）
+	 */
+	Abstract *string `required:""`
 }

@@ -1,12 +1,13 @@
 package email
 
 import (
+	"testing"
+
 	"github.com/uspeedo/uspeedo-sdk-go/services/email"
 	"github.com/uspeedo/uspeedo-sdk-go/services/email/apis"
 	"github.com/uspeedo/uspeedo-sdk-go/services/email/models"
 	"github.com/uspeedo/uspeedo-sdk-go/uspeedo"
 	"github.com/uspeedo/uspeedo-sdk-go/uspeedo/auth"
-	"testing"
 )
 
 func TestEmailClient_SendEmailTemplate(t *testing.T) {
@@ -29,6 +30,8 @@ func TestEmailClient_SendEmailTemplate(t *testing.T) {
 		SendEmail:  uspeedo.String("example@example.com"),
 		TemplateId: uspeedo.String("UETXXXXXXXXXXX"),
 		AccountId:  uspeedo.Int(0),
+		Subject:    uspeedo.String("自定义邮件主题"),
+		Abstract:   uspeedo.String("邮件摘要内容"),
 	})
 	if err != nil {
 		t.Logf("something bad happened: %s\n", err)
