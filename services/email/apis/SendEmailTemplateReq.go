@@ -27,4 +27,12 @@ type SendEmailTemplateReq struct {
 	 *
 	 */
 	TemplateId *string `required:"true"`
+	/**
+	 * Subject - email subject (optional)
+	 */
+	Subject *string `required:""`
+	/**
+	 * Abstract - email abstract/summary (optional)
+	 */
+	Abstract *string `required:""`
 }
