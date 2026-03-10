@@ -30,8 +30,8 @@ func TestEmailClient_SendEmailTemplate(t *testing.T) {
 		SendEmail:  uspeedo.String("example@example.com"),
 		TemplateId: uspeedo.String("UETXXXXXXXXXXX"),
 		AccountId:  uspeedo.Int(0),
-		Subject:    uspeedo.String("自定义邮件主题"),
-		Abstract:   uspeedo.String("邮件摘要内容"),
+		Subject:    uspeedo.String("Custom email subject"),
+		Abstract:   uspeedo.String("Email abstract content"),
 	})
 	if err != nil {
 		t.Logf("something bad happened: %s\n", err)
